@@ -97,6 +97,7 @@ function markupImages(items) {
 }
 
 function notifications(length, totalHits) {
+  refs.loadMoreBtn.style.display = 'none';
   if (length === 0) {
     Notiflix.Notify.failure(
       'Sorry, there are no images matching your search query. Please try again.'
@@ -104,7 +105,7 @@ function notifications(length, totalHits) {
     return;
   }
 
-  if (page === 1) {
+  if (page === 1 || page > 1) {
     refs.loadMoreBtn.style.display = 'flex';
     Notiflix.Notify.success(`Hooray! We found ${totalHits} images.`);
   }
