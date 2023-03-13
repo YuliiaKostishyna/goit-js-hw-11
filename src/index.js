@@ -105,7 +105,7 @@ function notifications(length, totalHits) {
     return;
   }
 
-  if (page === 1 || page > 1) {
+  if (page > 0) {
     refs.loadMoreBtn.style.display = 'flex';
     Notiflix.Notify.success(`Hooray! We found ${totalHits} images.`);
   }
